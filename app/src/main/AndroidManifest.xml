@@ -9,11 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GeeknewsApps">
-        <activity android:name=".register.SuccessRegistActivity" android:screenOrientation="portrait" />
-        <activity android:name=".register.UserProfilingActivity" android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".register.SuccessRegistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".register.UserProfilingActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".login.LoginActivity" android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
