@@ -34,71 +34,71 @@
 
         <TextView
             android:id="@+id/tv_title"
+            style="@style/TextView.sarala_020202"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:text="Welcome,"
-            style="@style/TextView.sarala_020202"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_subTitle"
+            style="@style/TextView.sarala_656565"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:text="Sign to continue!"
-            style="@style/TextView.sarala_656565"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            app:hintTextColor="@color/grey"
+            android:layout_marginEnd="24dp"
             app:boxStrokeColor="@color/dark_blue"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:hintTextColor="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_subTitle">
 
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/TextView.sarala_inputText_020202"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextView.sarala_inputText_020202"
-                android:inputType="textEmailAddress"
-                android:hint="@string/email_address" />
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:passwordToggleEnabled="true"
+            android:layout_marginEnd="24dp"
+            app:boxStrokeColor="@color/dark_blue"
             app:counterEnabled="true"
             app:counterMaxLength="16"
             app:hintTextColor="@color/grey"
-            app:boxStrokeColor="@color/dark_blue"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/TextView.sarala_inputText_020202"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextView.sarala_inputText_020202"
-                android:inputType="textPassword"
-                android:hint="@string/password" />
+                android:hint="@string/password"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -118,8 +118,8 @@
             style="@style/Button.Primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
             android:text="Login"
             app:layout_constraintBottom_toTopOf="@+id/btn_gmail"
@@ -131,11 +131,11 @@
             style="@style/Button.Third"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
             android:layout_marginBottom="32dp"
-            android:drawableTop="@drawable/logos_gmail"
-            android:paddingTop="8dp"
+            android:drawableStart="@drawable/logos_gmail"
+            android:paddingStart="12dp"
             android:text="Connect with gmail"
             app:layout_constraintBottom_toTopOf="@+id/tv_regist"
             app:layout_constraintEnd_toEndOf="parent"
