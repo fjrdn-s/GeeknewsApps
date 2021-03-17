@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_rectangle_bg"
+    android:paddingEnd="6dp"
+    android:paddingStart="6dp"
+    android:layout_marginStart="16dp"
+    android:layout_width="230dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_poster"
+        android:layout_width="230dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_poster" />
+
+    <ImageView
+        android:id="@+id/iv_shadow"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
+        app:layout_constraintEnd_toEndOf="@+id/iv_poster"
+        app:layout_constraintStart_toStartOf="@+id/iv_poster"
+        app:srcCompat="@drawable/rectangle_shadow" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/TextView.sarala_ffffff_small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="The Avengers"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_shadow"
+        app:layout_constraintTop_toTopOf="@+id/iv_shadow" />
+
+    <TextView
+        android:id="@+id/tv_subTitle"
+        style="@style/TextView.sarala_E3E3E3_small"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Finally,  we get to the most interesting part."
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_shadow"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

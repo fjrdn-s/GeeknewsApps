@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeeknewsApps">
         <activity
+            android:name=".onboarding.OnboardingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.help.HelpSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.profile.ProfileSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.setting.SettingActivity" />
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity

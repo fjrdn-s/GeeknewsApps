@@ -51,6 +51,12 @@
         <item name="android:letterSpacing">0.1</item>
     </style>
 
+    <style name="TextView.sarala_020202_no_latterSpacing">
+        <item name="android:fontFamily">@font/sarala</item>
+        <item name="android:textColor">#020202</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
     <style name="TextView.sarala_ffffff">
         <item name="android:fontFamily">@font/sarala</item>
         <item name="android:textColor">#ffffff</item>
@@ -72,10 +78,36 @@
         <item name="android:letterSpacing">0.1</item>
     </style>
 
+
+    <style name="TextView.sarala_E3E3E3_small">
+        <item name="android:fontFamily">@font/sarala</item>
+        <item name="android:textColor">#E3E3E3</item>
+    </style>
+
     <style name="TextView.sarala_inputText_020202">
         <item name="android:fontFamily">@font/sarala</item>
         <item name="android:textColor">#020202</item>
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="TextView.sarala_inputText_ffffff">
+        <item name="android:fontFamily">@font/sarala</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <!--    style for CoordinatorLayout-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    </style>
+
+    <!--    style for TabLayout-->
+    <style name="Tab" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/sarala</item>
+        <item name="android:textColor">#CFCFCF</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">left</item>
     </style>
 </resources>

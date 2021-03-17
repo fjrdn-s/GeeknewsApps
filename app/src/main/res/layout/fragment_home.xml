@@ -1,23 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <Toolbar
+        android:id="@+id/toolbar_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:background="@color/light_grey"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo" />
+    </Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_listHorizontal"
+        android:layout_width="match_parent"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Fragment Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:paddingEnd="16dp"
+        android:layout_height="320dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_home_horizontal"
+        tools:itemCount="1"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_LayoutHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorFullWidth="false"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="#020202"
+                app:tabIndicatorColor="#020202"
+                app:tabTextAppearance="@style/Tab">
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_Home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

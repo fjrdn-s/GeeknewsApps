@@ -12,4 +12,6 @@
     <color name="dark_blue">#2E7DF2</color>
     <color name="light_blue">#56D8F4</color>
     <color name="grey">#656565</color>
+    <color name="light_grey">#EBF1EFEF</color>
+    <color name="indicator_active">#F57C00</color>
 </resources>
