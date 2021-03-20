@@ -7,15 +7,16 @@
     tools:context=".ui.home.movie.HomeMovieFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcListVertical"
+        android:id="@+id/rc_ListVertical"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="55dp"
         android:background="@color/white"
-        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_home_vertical"/>
+        tools:listitem="@layout/item_home_vertical" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

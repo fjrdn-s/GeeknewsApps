@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/rectangle_shadow" />
+        app:srcCompat="@drawable/shape_bg_transparent_blue" />
 
     <TextView
         android:id="@+id/tv_titleOb"
@@ -46,7 +46,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        style="@style/TextView.sarala_E3E3E3_small"
+        style="@style/TextView.sarala_E3E3E3_small_noSpacing"
         android:gravity="center"
         android:textSize="18sp"
         android:text="A legal relationship in which one party holds a title to property while another party."

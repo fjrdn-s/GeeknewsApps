@@ -79,10 +79,27 @@
     </style>
 
 
-    <style name="TextView.sarala_E3E3E3_small">
+    <style name="TextView.sarala_E3E3E3_small_noSpacing">
         <item name="android:fontFamily">@font/sarala</item>
         <item name="android:textColor">#E3E3E3</item>
     </style>
+
+    <style name="TextView.sarala_ffffff_small_noSpacing">
+        <item name="android:fontFamily">@font/sarala</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="TextView.sarala_656565_small_noSpacing">
+        <item name="android:fontFamily">@font/sarala</item>
+        <item name="android:textColor">#656565</item>
+    </style>
+
+<!--    <style name="TextView.sarala_3EED46_small_noSpacing">-->
+<!--        <item name="android:fontFamily">@font/sarala</item>-->
+<!--        <item name="android:textColor">#C2185B</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:textAllCaps">true</item>-->
+<!--    </style>-->
 
     <style name="TextView.sarala_inputText_020202">
         <item name="android:fontFamily">@font/sarala</item>

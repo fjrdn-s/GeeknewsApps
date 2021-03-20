@@ -45,5 +45,10 @@ class SettingFragment : Fragment() {
 
 //            Toast.makeText(context, "test click Help and other", Toast.LENGTH_SHORT).show()
         }
+
+//        btn_logout.setOnClickListener {
+//            val btnLogout= Intent(activity, DetailActivity::class.java)
+//            startActivity(btnLogout)
+//        }
     }
 }

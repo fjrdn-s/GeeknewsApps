@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indev.geeknewsapps.R
-import com.indev.geeknewsapps.ui.home.model.HomeHorizontal
-import com.indev.geeknewsapps.ui.home.model.HomeHorizontalData
+import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
+import com.indev.geeknewsapps.ui.home._model.HomeHorizontalData
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {

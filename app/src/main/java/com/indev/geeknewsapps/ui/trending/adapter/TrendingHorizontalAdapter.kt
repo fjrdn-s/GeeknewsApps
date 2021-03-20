@@ -1,4 +1,4 @@
-package com.indev.geeknewsapps.ui.home
+package com.indev.geeknewsapps.ui.trending.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +11,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.indev.geeknewsapps.R
 import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
 
-class HomeHorizontalAdapter(
+class TrendingHorizontalAdapter(
     private val listRecyclerHorizontal: ArrayList<HomeHorizontal>
-) : RecyclerView.Adapter<HomeHorizontalAdapter.HomeHorizontalViewHolder>() {
+) : RecyclerView.Adapter<TrendingHorizontalAdapter.HomeHorizontalViewHolder>() {
 
     inner class HomeHorizontalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvTitle: TextView = itemView.findViewById(R.id.tv_title)
@@ -26,7 +26,7 @@ class HomeHorizontalAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): HomeHorizontalAdapter.HomeHorizontalViewHolder {
+    ): TrendingHorizontalAdapter.HomeHorizontalViewHolder {
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_home_horizontal, parent, false)
         return HomeHorizontalViewHolder(view)
@@ -37,7 +37,7 @@ class HomeHorizontalAdapter(
     }
 
     override fun onBindViewHolder(
-        holder: HomeHorizontalAdapter.HomeHorizontalViewHolder,
+        holder: TrendingHorizontalAdapter.HomeHorizontalViewHolder,
         position: Int
     ) {
         val homeHorizontal = listRecyclerHorizontal[position]
