@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.GeeknewsApps" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/light_blue</item>
+        <item name="colorPrimary">@color/dark_blue</item>
         <item name="colorPrimaryVariant">@color/dark_blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -51,7 +51,7 @@
         <item name="android:letterSpacing">0.1</item>
     </style>
 
-    <style name="TextView.sarala_020202_no_latterSpacing">
+    <style name="TextView.sarala_020202_no_spacing">
         <item name="android:fontFamily">@font/sarala</item>
         <item name="android:textColor">#020202</item>
         <item name="android:textSize">28sp</item>

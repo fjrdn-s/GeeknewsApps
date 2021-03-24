@@ -1,5 +1,6 @@
 package com.indev.geeknewsapps.ui.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.indev.geeknewsapps.R
+import com.indev.geeknewsapps.ui.detail.DetailActivity
 import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
 
 class HomeHorizontalAdapter(
@@ -50,5 +52,19 @@ class HomeHorizontalAdapter(
         holder.tvSubTitle.text = homeHorizontal.subTitle
         holder.tvCategory.text = homeHorizontal.category
         holder.tvPostTime.text = homeHorizontal.postTime
+
+        val intentDetail= holder.itemView.context
+
+        holder.itemView.setOnClickListener {
+            val mvDetail= Intent(intentDetail, DetailActivity::class.java)
+            mvDetail.putExtra(DetailActivity.EXTRA_TITLE, homeHorizontal.title)
+            mvDetail.putExtra(DetailActivity.EXTRA_DESCRIPTION, homeHorizontal.description)
+            mvDetail.putExtra(DetailActivity.EXTRA_CATEGORY, homeHorizontal.category)
+            mvDetail.putExtra(DetailActivity.EXTRA_POSTTIME, homeHorizontal.postTime)
+            mvDetail.putExtra(DetailActivity.EXTRA_POSTBY, homeHorizontal.postBy)
+            mvDetail.putExtra(DetailActivity.EXTRA_IMAGES, homeHorizontal.images)
+
+            intentDetail.startActivity(mvDetail)
+        }
     }
 }

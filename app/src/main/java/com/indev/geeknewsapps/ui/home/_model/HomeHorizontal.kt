@@ -7,5 +7,6 @@ class HomeHorizontal (
     var description: String= "",
     var category: String= "",
     var postTime: String= "",
+    var postBy: String= "",
     var images: Int= 0
 )

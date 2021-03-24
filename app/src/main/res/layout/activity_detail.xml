@@ -47,7 +47,7 @@
                 android:layout_gravity="center|start"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginTop="15dp"/>
 
             <TextView
                 android:id="@+id/tv_title"
@@ -55,11 +55,11 @@
                 android:layout_height="wrap_content"
                 style="@style/TextView.sarala_ffffff_small_noSpacing"
                 android:textSize="22sp"
-                android:text="Update Februari Bts World Hadirkan Chapter Baru Dengan Tokoh Utama Hoseok"
+                android:text="Update Februari Bts World Hadirkan Chapter Baru Hoseok"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginTop="40dp"/>
+                android:layout_marginTop="60dp"/>
 
             <TextView
                 android:id="@+id/tv_postTime"
@@ -87,30 +87,44 @@
                 android:id="@+id/toolbar_detail"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:navigationIcon="@drawable/ic_arrow_back_white">
+                app:layout_collapseMode="pin">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="24dp"
-                    android:orientation="horizontal"
-                    android:gravity="end">
+                    android:layout_marginStart="24dp">
+
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_back_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/iv_formatSize"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:layout_marginEnd="16dp"
                         android:src="@drawable/ic_filled_format_size"
-                        android:layout_marginEnd="16dp"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_share"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/iv_share"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:src="@drawable/ic_filled_share"/>
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_filled_share"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.appcompat.widget.Toolbar>
 

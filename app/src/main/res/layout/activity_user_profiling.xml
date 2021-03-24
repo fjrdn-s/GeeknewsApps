@@ -26,7 +26,7 @@
             app:srcCompat="@drawable/logo" />
 
         <ImageView
-            android:id="@+id/iv_profile"
+            android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -43,53 +43,60 @@
         android:background="@drawable/shape_rectangle_bg">
 
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ib_tech"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/shape_rectangle_tech"
-            android:padding="30dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rectangle_blue"
+            android:drawableTop="@drawable/ic_techno"
+            android:paddingTop="10dp"
+            android:text="tech"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@drawable/ic_techno" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ib_games"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
-            android:background="@drawable/shape_rectangle_games"
-            android:padding="20dp"
+            android:background="@drawable/rectangle_yellow"
+            android:drawableTop="@drawable/ic_games"
+            android:paddingTop="10dp"
+            android:text="games"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@drawable/ic_games" />
+            app:layout_constraintTop_toTopOf="@+id/ib_tech" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ib_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:background="@drawable/shape_rectangle_event"
-            android:padding="30dp"
+            android:textColor="@color/white"
+            android:text="event"
+            android:drawableTop="@drawable/ic_event"
+            android:background="@drawable/rectangle_green"
+            android:paddingTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ib_games"
-            app:srcCompat="@drawable/ic_event" />
+            app:layout_constraintTop_toBottomOf="@+id/ib_games"/>
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ib_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/shape_rectangle_movie"
-            android:padding="31dp"
+            android:text="movie"
+            android:textColor="@color/white"
+            android:drawableTop="@drawable/ic_movie"
+            android:background="@drawable/rectangle_light_blue"
+            android:paddingTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ib_tech"
-            app:srcCompat="@drawable/ic_movie" />
+            app:layout_constraintTop_toBottomOf="@+id/ib_tech" />
 
         <TextView
             android:id="@+id/textView"

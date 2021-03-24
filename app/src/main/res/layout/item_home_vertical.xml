@@ -31,7 +31,7 @@
 
     <TextView
         android:id="@+id/tv_title"
-        style="@style/TextView.sarala_020202_no_latterSpacing"
+        style="@style/TextView.sarala_020202_no_spacing"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

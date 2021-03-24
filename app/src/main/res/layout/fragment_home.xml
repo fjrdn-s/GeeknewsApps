@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/light_grey"
+    android:orientation="vertical"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -14,69 +14,85 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_collapseMode="pin"
-        android:background="@color/light_grey"
+        android:background="@color/white"
         app:logo="@drawable/logo">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
-            android:orientation="horizontal"
-            android:gravity="end">
+            android:gravity="end"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/iv_notification"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_notifications_active"/>
+                android:src="@drawable/ic_notifications_active" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_listHorizontal"
-        android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
-        android:paddingEnd="16dp"
-        android:layout_height="320dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_home_horizontal"
-        tools:itemCount="1"
-        tools:ignore="RtlSymmetry" />
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="8dp"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:layout_height="match_parent">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_LayoutHome"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_listHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginTop="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_home_horizontal" />
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabIndicatorFullWidth="false"
-                app:tabMode="scrollable"
-                app:tabSelectedTextColor="#020202"
-                app:tabIndicatorColor="#020202"
-                app:tabTextAppearance="@style/Tab">
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rc_listHorizontal">
 
-            </com.google.android.material.tabs.TabLayout>
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_LayoutHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="#020202"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="#020202"
+                    app:tabTextAppearance="@style/Tab">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                </com.google.android.material.tabs.TabLayout>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp_Home"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
+            </com.google.android.material.appbar.AppBarLayout>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_Home"
+                android:layout_width="match_parent"
+                android:layout_height="580dp"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
