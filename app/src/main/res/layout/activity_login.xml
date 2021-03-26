@@ -148,7 +148,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:textAllCaps="false"
-            android:textColor="@color/black"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:text="I’m a new user?, sign up"
             app:layout_constraintBottom_toBottomOf="parent"

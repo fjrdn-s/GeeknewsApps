@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indev.geeknewsapps.R
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontalData
+import com.indev.geeknewsapps.ui._model.ModelData
+import com.indev.geeknewsapps.ui.category.tech.CategoryTechData
+import com.indev.geeknewsapps.ui.category.tech.TechVerticalAdapter
 import kotlinx.android.synthetic.main.fragment_home_tech.*
 
 class HomeTechFragment : Fragment() {
 
-    private var techVertical: ArrayList<HomeHorizontal> = arrayListOf()
+    private var techVertical: ArrayList<ModelData> = arrayListOf()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +29,7 @@ class HomeTechFragment : Fragment() {
 
         rc_ListVertical.setHasFixedSize(true)
 
-        techVertical.addAll(HomeHorizontalData.listData)
+        techVertical.addAll(CategoryTechData.listData)
         showRecyclerList()
     }
 

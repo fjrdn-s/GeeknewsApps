@@ -1,6 +1,6 @@
-package com.indev.geeknewsapps.ui.home._model
+package com.indev.geeknewsapps.ui.home._objek
 
-import com.indev.geeknewsapps.R
+import com.indev.geeknewsapps.ui._model.ModelData
 
 object HomeHorizontalData {
 
@@ -31,13 +31,12 @@ object HomeHorizontalData {
                     "After debuting in 2013 with their single album 2 Cool 4 Skool, BTS released their first Korean-language studio album, Dark and Wild, and Japanese-language studio album, Wake Up, in 2014. The groups second Korean studio album, Wings (2016), was their first to sell one million copies in South Korea. By 2017, BTS crossed into the global music market, leading the Korean Wave into the United States and breaking numerous sales records. They became the first Korean group to receive a certification from the Recording Industry Association of America (RIAA) for their single \"Mic Drop\", as well as the first Korean act to top the US Billboard 200 chart with their studio album Love Yourself: Tear (2018). BTS also became the fastest group since the Beatles to earn four US number-one albums, doing so in less than two years."
 
     )
-    private val hrImages= intArrayOf(
-            R.drawable.img_1,
-            R.drawable.img_2,
-            R.drawable.img_3,
-            R.drawable.img_4,
-            R.drawable.img_5
-
+    private val hrImages= arrayOf(
+            "https://geeknews.id/wp-content/uploads/2021/03/KODA-X-Esports-Venture-e1615558071544.jpg",
+            "https://geeknews.id/wp-content/uploads/2021/02/A3_STILL-ALIVE-Event-EXP-300-dan-Region-Baru-Somius-Kini-Hadir-Dalam-Update-Skala-Besar-e1614067675552.jpg",
+            "https://geeknews.id/wp-content/uploads/2021/02/BTS-WORLD-Update-Februari-Hadirkan-Chapter-Baru-dengan-Tokoh-Utama-Hoseok-e1614066750893.jpg",
+            "https://geeknews.id/wp-content/uploads/2021/02/Legion-Slim-7i-2-e1614067236105.png",
+            "https://geeknews.id/wp-content/uploads/2021/03/ragnarok-origin.jpg"
     )
 
     private val hrCategory= arrayOf(
@@ -64,20 +63,20 @@ object HomeHorizontalData {
             "By Riyan Agustiar Sutardi"
     )
 
-    val listData: ArrayList<HomeHorizontal>
-    get() {
-        val list= arrayListOf<HomeHorizontal>()
-        for (position in hrTitle.indices) {
-            val homeHrizontal= HomeHorizontal()
-            homeHrizontal.title= hrTitle[position]
-            homeHrizontal.subTitle= hrSubTitle[position]
-            homeHrizontal.description= hrDescription[position]
-            homeHrizontal.images= hrImages[position]
-            homeHrizontal.category= hrCategory[position]
-            homeHrizontal.postTime= hrPostTime[position]
-            homeHrizontal.postBy= hrPostBy[position]
-            list.add(homeHrizontal)
+    val listData: ArrayList<ModelData>
+        get() {
+            val list = arrayListOf<ModelData>()
+            for (position in hrTitle.indices) {
+                val modelData = ModelData()
+                modelData.title = hrTitle[position]
+                modelData.subTitle = hrSubTitle[position]
+                modelData.description = hrDescription[position]
+                modelData.imagesUrl = hrImages[position]
+                modelData.category = hrCategory[position]
+                modelData.postTime = hrPostTime[position]
+                modelData.postBy = hrPostBy[position]
+                list.add(modelData)
+            }
+            return list
         }
-        return list
-    }
 }

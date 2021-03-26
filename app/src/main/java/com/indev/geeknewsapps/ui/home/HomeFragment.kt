@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indev.geeknewsapps.R
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontalData
+import com.indev.geeknewsapps.ui._model.ModelData
+import com.indev.geeknewsapps.ui.home._objek.HomeHorizontalData
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private var horizontalList: ArrayList<HomeHorizontal> = arrayListOf()
+    private var horizontalList: ArrayList<ModelData> = arrayListOf()
 
     override fun onCreateView(
             inflater: LayoutInflater,

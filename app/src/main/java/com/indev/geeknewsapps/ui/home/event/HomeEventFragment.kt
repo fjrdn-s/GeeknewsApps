@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indev.geeknewsapps.R
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontalData
+import com.indev.geeknewsapps.ui._model.ModelData
+import com.indev.geeknewsapps.ui.category.event.CategoryEventData
+import com.indev.geeknewsapps.ui.category.event.EventVerticalAdapter
 import kotlinx.android.synthetic.main.fragment_home_event.*
 
 class HomeEventFragment : Fragment() {
 
-    private var eventVertical: ArrayList<HomeHorizontal> = arrayListOf()
+    private var eventVertical: ArrayList<ModelData> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +29,7 @@ class HomeEventFragment : Fragment() {
 
         rc_ListVertical.setHasFixedSize(true)
 
-        eventVertical.addAll(HomeHorizontalData.listData)
+        eventVertical.addAll(CategoryEventData.listData)
         showRecyclerList()
     }
 

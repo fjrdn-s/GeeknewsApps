@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indev.geeknewsapps.R
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontalData
+import com.indev.geeknewsapps.ui._model.ModelData
+import com.indev.geeknewsapps.ui.category.movie.CategoryMovieData
+import com.indev.geeknewsapps.ui.category.movie.MovieVerticalAdapter
 import kotlinx.android.synthetic.main.fragment_home_movie.*
 
 class HomeMovieFragment : Fragment() {
 
-    private var movieVertical: ArrayList<HomeHorizontal> = arrayListOf()
+    private var movieVertical: ArrayList<ModelData> = arrayListOf()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +29,7 @@ class HomeMovieFragment : Fragment() {
 
         rc_ListVertical.setHasFixedSize(true)
 
-        movieVertical.addAll(HomeHorizontalData.listData)
+        movieVertical.addAll(CategoryMovieData.listData)
         showRecyclerList()
     }
 

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.indev.geeknewsapps">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeeknewsApps">
         <activity android:name=".ui.category.event.CategoryEventActivity" />
+        <activity android:name=".ui.category.game.CategoryGameActivity" />
+        <activity android:name=".ui.category.movie.CategoryMovieActivity" />
+        <activity android:name=".ui.category.tech.CategoryTechActivity" />
         <activity android:name=".ui.detail.DetailActivity" />
         <activity
             android:name=".onboarding.OnboardingActivity"

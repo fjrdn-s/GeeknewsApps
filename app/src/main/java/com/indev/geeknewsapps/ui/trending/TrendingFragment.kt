@@ -7,17 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.indev.geeknewsapps.R
+import com.indev.geeknewsapps.ui._model.ModelData
 import com.indev.geeknewsapps.ui.home.HomeHorizontalAdapter
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontalData
-import com.indev.geeknewsapps.ui.home.tekno.TechVerticalAdapter
+import com.indev.geeknewsapps.ui.home._objek.HomeHorizontalData
+import com.indev.geeknewsapps.ui.trending.adapter.TrendingVerticalAdapter
 import kotlinx.android.synthetic.main.fragment_home.rc_listHorizontal
 import kotlinx.android.synthetic.main.fragment_trending.*
 
 class TrendingFragment : Fragment() {
 
-    private var verticalList: ArrayList<HomeHorizontal> = arrayListOf()
-    private var horizontalList: ArrayList<HomeHorizontal> = arrayListOf()
+    private var verticalList: ArrayList<ModelData> = arrayListOf()
+    private var horizontalList: ArrayList<ModelData> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,8 +42,8 @@ class TrendingFragment : Fragment() {
     private fun showRecyclerVertical() {
         rc_TrendVertical.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        val techVerticalAdapter = TechVerticalAdapter(verticalList)
-        rc_TrendVertical.adapter = techVerticalAdapter
+        val trendingVerticalAdapter = TrendingVerticalAdapter(verticalList)
+        rc_TrendVertical.adapter = trendingVerticalAdapter
     }
 
     private fun showRecyclerHorizontal() {

@@ -45,7 +45,7 @@
                         android:background="@drawable/bg_text_category"
                         android:gravity="center"
                         android:elevation="1dp"
-                        android:text="Event" />
+                        android:text="Game" />
 
                     <ImageView
                         android:id="@+id/iv_shadow"
@@ -57,7 +57,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rc_EventVertical"
+                android:id="@+id/rc_GameVertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

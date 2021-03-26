@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.indev.geeknewsapps.R
+import com.indev.geeknewsapps.ui._model.ModelData
 import com.indev.geeknewsapps.ui.detail.DetailActivity
-import com.indev.geeknewsapps.ui.home._model.HomeHorizontal
 
 class HomeHorizontalAdapter(
-    private val listRecyclerHorizontal: ArrayList<HomeHorizontal>
+    private val listRecyclerHorizontal: ArrayList<ModelData>
 ) : RecyclerView.Adapter<HomeHorizontalAdapter.HomeHorizontalViewHolder>() {
 
     inner class HomeHorizontalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,7 +22,7 @@ class HomeHorizontalAdapter(
         var tvSubTitle: TextView = itemView.findViewById(R.id.tv_subTitle)
         var tvCategory: TextView = itemView.findViewById(R.id.tv_category)
         var tvPostTime: TextView = itemView.findViewById(R.id.tv_postTime)
-        var imgPhoster: ImageView = itemView.findViewById(R.id.iv_poster)
+        var imgPoster: ImageView = itemView.findViewById(R.id.iv_poster)
     }
 
     override fun onCreateViewHolder(
@@ -45,9 +45,9 @@ class HomeHorizontalAdapter(
         val homeHorizontal = listRecyclerHorizontal[position]
 
         Glide.with(holder.itemView.context)
-            .load(homeHorizontal.images)
+            .load(homeHorizontal.imagesUrl)
             .apply(RequestOptions().override(230, 290))
-            .into(holder.imgPhoster)
+            .into(holder.imgPoster)
         holder.tvTitle.text = homeHorizontal.title
         holder.tvSubTitle.text = homeHorizontal.subTitle
         holder.tvCategory.text = homeHorizontal.category
@@ -62,7 +62,7 @@ class HomeHorizontalAdapter(
             mvDetail.putExtra(DetailActivity.EXTRA_CATEGORY, homeHorizontal.category)
             mvDetail.putExtra(DetailActivity.EXTRA_POSTTIME, homeHorizontal.postTime)
             mvDetail.putExtra(DetailActivity.EXTRA_POSTBY, homeHorizontal.postBy)
-            mvDetail.putExtra(DetailActivity.EXTRA_IMAGES, homeHorizontal.images)
+            mvDetail.putExtra(DetailActivity.EXTRA_IMAGES, homeHorizontal.imagesUrl)
 
             intentDetail.startActivity(mvDetail)
         }

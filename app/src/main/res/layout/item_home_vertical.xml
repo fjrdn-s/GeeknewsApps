@@ -16,11 +16,11 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/iv_poster_vertical" />
+        app:srcCompat="@drawable/dummy_poster" />
 
     <TextView
         android:id="@+id/tv_category"
-        style="@style/TextView.sarala_656565"
+        style="@style/TextView.sarala_FF5592_small_noSpacing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="24dp"
         android:maxLines="2"
-        android:text="Event Exp 300% Dan Region Baru “Somius” Kini Hadir Dalam Skala Besar A3: Still Alive"
+        android:text="Update Februari Bts World Hadirkan Chapter Baru Dengan Tokoh Utama Hoseok"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_poster"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,6 @@
-package com.indev.geeknewsapps.ui.home._model
+package com.indev.geeknewsapps.ui._model
 
-class HomeHorizontal (
+class ModelData (
 
     var title: String= "",
     var subTitle: String= "",
@@ -8,5 +8,5 @@ class HomeHorizontal (
     var category: String= "",
     var postTime: String= "",
     var postBy: String= "",
-    var images: Int= 0
+    var imagesUrl: String= ""
 )

@@ -13,7 +13,7 @@ class SuccessRegistActivity : AppCompatActivity() {
         setContentView(R.layout.activity_success_regist)
 //
         btn_successRegist.setOnClickListener {
-            val btnSuccessRegist = Intent(this@SuccessRegistActivity, MainActivity::class.java)
+            val btnSuccessRegist = Intent(this, MainActivity::class.java)
             startActivity(btnSuccessRegist)
             finishAffinity()
         }
