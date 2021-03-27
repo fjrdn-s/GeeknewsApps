@@ -5,11 +5,11 @@ import com.indev.geeknewsapps.ui._model.ModelData
 object CategoryEventData {
 
     private val hrTitle= arrayOf(
-            "KODA X Esports Venture Hadirkan MLBB",
-            "Event Exp 300% Dalam Update Skala Besar",
+            "KODA X Esports Venture Hadirkan MLBB Online Tournament",
+            "Event Exp 300% Dan Region Baru “Somius” Kini Hadir Dalam Update Skala Besar A3: Still Alive",
             "Overwatch – Kanezaka Challenge Telah Hadir",
-            "EVOS Esports Tandatangani Juara Dunia PUBG",
-            "Sambut Event Natal Di Blade&Soul Revolution MMORPG"
+            "EVOS Esports Tandatangani Juara Dunia PUBG Mobile Microboy",
+            "Sambut Tahun Baru Dengan Event Perayaan Liburan Di Blade&Soul Revolution"
     )
 
     private val hrDescription= arrayOf(

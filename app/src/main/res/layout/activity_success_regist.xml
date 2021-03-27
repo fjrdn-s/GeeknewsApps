@@ -32,14 +32,22 @@
         style="@style/TextView.sarala_656565"
         android:text="Justin Beiber" />
 
+    <TextView
+        android:id="@+id/tv_emailUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/TextView.sarala_656565"
+        android:text="Justin299@gmail.com" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_successRegist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginTop="64dp"
         style="@style/Button.Primary"
-        android:text="Create My Account"/>
+        android:text="Get Started!"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,11 +5,11 @@ import com.indev.geeknewsapps.ui._model.ModelData
 object CategoryGameData {
 
     private val hrTitle = arrayOf(
-            "Gravity Game Link Umumkan 4 Game Terbaru",
-            "Update Terbaru Lineage2 Revolution",
-            "Elisabeth Dari The KOF Xi Hadir Di Tahun 2021",
-            "Kingdoms : Iron and Blood Akan Dirilis Januari 2021",
-            "Golf “Birdie Crush” Mencapai 1 Juta Pra-Registrasi"
+            "Gravity Game Link Umumkan 4 Game Terbaru Sekaligus Di Acara Gravity Day 2021",
+            "Update Terbaru Lineage2 Revolution Membuka Batas Wilayah Rune Baru",
+            "Elisabeth Dari The King Of Fighters Xi Hadir Dalam Update The King Of Fighters Allstar Di Tahun 2021",
+            "Kingdoms : Iron and Blood Akan Dirilis 27 Januari 2021",
+            "Game Fantasi Golf “Birdie Crush” Mencapai 1 Juta Pra-Registrasi"
     )
 
     private val hrDescription = arrayOf(

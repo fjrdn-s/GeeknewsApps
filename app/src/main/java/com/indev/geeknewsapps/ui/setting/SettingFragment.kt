@@ -5,13 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.indev.geeknewsapps.R
+import com.indev.geeknewsapps.login.LoginActivity
 import com.indev.geeknewsapps.ui.setting.help.HelpSettingActivity
 import com.indev.geeknewsapps.ui.setting.profile.ProfileSettingActivity
 import kotlinx.android.synthetic.main.fragment_setting.*
 
 class SettingFragment : Fragment() {
+
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +30,15 @@ class SettingFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        mAuth = FirebaseAuth.getInstance()
+        val currentUser = mAuth.currentUser
+
+        Glide.with(this)
+            .load(currentUser?.photoUrl)
+            .into(iv_profile)
+        tv_fullName.text = currentUser?.displayName
+        tv_emailUser.text = currentUser?.email
+
 //        (activity as SettingActivity)
 //
 //        btn_profileSetting.setOnClickListener {
@@ -33,6 +48,8 @@ class SettingFragment : Fragment() {
 //        btn_helpSetting.setOnClickListener {
 //            Navigation.findNavController(it).navigate(R.id.action_settingFragment_to_helpSettingFragment)
 //        }
+
+
 
         btn_profileSetting.setOnClickListener {
             val btnProfile= Intent(activity, ProfileSettingActivity::class.java)
@@ -46,9 +63,13 @@ class SettingFragment : Fragment() {
 //            Toast.makeText(context, "test click Help and other", Toast.LENGTH_SHORT).show()
         }
 
-//        btn_logout.setOnClickListener {
-//            val btnLogout= Intent(activity, DetailActivity::class.java)
-//            startActivity(btnLogout)
-//        }
+        btn_logout.setOnClickListener {
+            mAuth.signOut()
+
+            val btnLogout = Intent(activity, LoginActivity::class.java)
+            startActivity(btnLogout)
+
+            activity?.let { it1 -> finishAffinity(it1) }
+        }
     }
 }

@@ -110,7 +110,7 @@
             android:textAllCaps="false"
             android:textColor="@color/black"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:text="Forget Password?"
+            android:text="@string/forget_password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
@@ -122,7 +122,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            android:text="Login"
+            android:text="@string/login"
             app:layout_constraintBottom_toTopOf="@+id/btn_gmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -137,10 +137,11 @@
             android:layout_marginBottom="32dp"
             android:drawableStart="@drawable/logos_gmail"
             android:paddingStart="12dp"
-            android:text="Connect with gmail"
+            android:text="@string/gmail"
             app:layout_constraintBottom_toTopOf="@+id/tv_regist"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="RtlSymmetry" />
 
         <Button
             android:id="@+id/tv_regist"
@@ -149,7 +150,7 @@
             android:layout_marginBottom="24dp"
             android:textAllCaps="false"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:text="I’m a new user?, sign up"
+            android:text="@string/register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
