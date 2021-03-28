@@ -57,6 +57,8 @@ dependencies {
 //    Firebase
     implementation 'com.google.firebase:firebase-auth:20.0.3'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.2'
 
 //    Testing Apps
     testImplementation 'junit:junit:4.13.2'
