@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -20,8 +21,8 @@ class SettingFragment : Fragment() {
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_setting, container, false)
@@ -34,8 +35,8 @@ class SettingFragment : Fragment() {
         val currentUser = mAuth.currentUser
 
         Glide.with(this)
-            .load(currentUser?.photoUrl)
-            .into(iv_profile)
+                .load(currentUser?.photoUrl)
+                .into(iv_profile)
         tv_fullName.text = currentUser?.displayName
         tv_emailUser.text = currentUser?.email
 
@@ -50,26 +51,45 @@ class SettingFragment : Fragment() {
 //        }
 
 
-
         btn_profileSetting.setOnClickListener {
-            val btnProfile= Intent(activity, ProfileSettingActivity::class.java)
+            val btnProfile = Intent(activity, ProfileSettingActivity::class.java)
             startActivity(btnProfile)
         }
 
         btn_helpSetting.setOnClickListener {
-            val btnHelp= Intent(activity, HelpSettingActivity::class.java)
+            val btnHelp = Intent(activity, HelpSettingActivity::class.java)
             startActivity(btnHelp)
-
-//            Toast.makeText(context, "test click Help and other", Toast.LENGTH_SHORT).show()
         }
 
         btn_logout.setOnClickListener {
-            mAuth.signOut()
+            alertLogout()
+        }
+    }
 
+    private fun alertLogout() {
+        val builder = activity?.let {
+            AlertDialog.Builder(it)
+        }
+
+        builder?.setTitle("Warning!")
+        builder?.setMessage("Are you sure, want to logout?")
+        builder?.setIcon(R.drawable.ic_warning)
+
+        builder?.setPositiveButton("Yes") { dialog, _ ->
+            mAuth.signOut()
             val btnLogout = Intent(activity, LoginActivity::class.java)
             startActivity(btnLogout)
-
             activity?.let { it1 -> finishAffinity(it1) }
+            dialog.dismiss()
         }
+
+        builder?.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val alertDialog = builder?.create()
+
+        alertDialog?.setCancelable(false)
+        alertDialog?.show()
     }
 }

@@ -13,6 +13,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.indev.geeknewsapps.R
+import com.indev.geeknewsapps.login.reset.ResetPasswordActivity
 import com.indev.geeknewsapps.register.RegisterActivity
 import com.indev.geeknewsapps.register.SuccessRegistActivity
 import com.indev.geeknewsapps.register.UserProfilingActivity
@@ -35,11 +36,17 @@ class LoginActivity : AppCompatActivity() {
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build()
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
+        tv_forgetPassword.setOnClickListener {
+//            resetPassword()
+
+            val resetIntent = Intent(this, ResetPasswordActivity::class.java)
+            startActivity(resetIntent)
+        }
 
         btn_login.setOnClickListener {
             signInWithEmail()
@@ -55,6 +62,47 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+//    private fun resetPassword() {
+//        val resetPassword = Dialog(this)
+//
+//        resetPassword.setContentView(R.layout.dialog_forget_password)
+//        resetPassword.btn_submit.setOnClickListener {
+//            Toast.makeText(applicationContext, "Click submit", Toast.LENGTH_SHORT).show()
+//            val email = et_emailResetPass.text.toString().trim()
+//
+//            if (email.isEmpty()) {
+//                et_emailResetPass.error = "Please enter email address"
+//                et_emailResetPass.requestFocus()
+//                return@setOnClickListener
+//            }
+//
+//            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+//                et_emailResetPass.error = "Invalid email!"
+//                et_emailResetPass.requestFocus()
+//                return@setOnClickListener
+//            }
+//
+//            FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener {
+//                if (it.isSuccessful) {
+//                    Toast.makeText(
+//                        applicationContext,
+//                        "Check email for link reset password",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                    val loginIntent = Intent(this, LoginActivity::class.java)
+//                    startActivity(loginIntent)
+//                    finish()
+//                } else {
+//                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//            resetPassword.dismiss()
+//        }
+//
+//        resetPassword.setCancelable(false)
+//        resetPassword.show()
+//    }
+
     private fun signInWithEmail() {
         val email = et_emailAddress.text.toString().trim()
         val password = et_password.text.toString().trim()
@@ -66,7 +114,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            et_emailAddress.error = "Please enter email address"
+            et_emailAddress.error = "Invalid email!"
             et_emailAddress.requestFocus()
             return
         }
@@ -82,16 +130,16 @@ class LoginActivity : AppCompatActivity() {
 
     private fun signInUser(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) {
-                    if (it.isSuccessful) {
-                        val successIntent = Intent(this, SuccessRegistActivity::class.java)
-                        startActivity(successIntent)
-                        finish()
-                    } else {
-                        Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+            .addOnCompleteListener(this) {
+                if (it.isSuccessful) {
+                    val successIntent = Intent(this, SuccessRegistActivity::class.java)
+                    startActivity(successIntent)
+                    finish()
+                } else {
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
 //                        Log.w("LoginActivity", "Google sign in failed")
-                    }
                 }
+            }
     }
 
     private fun signInWithGoogle() {
@@ -125,17 +173,17 @@ class LoginActivity : AppCompatActivity() {
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d("LoginActivity", "signInWithCredential:success")
-                        val profillingIntent = Intent(this, UserProfilingActivity::class.java)
-                        startActivity(profillingIntent)
-                        finish()
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w("LoginActivity", "signInWithCredential:failure", task.exception)
-                    }
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d("LoginActivity", "signInWithCredential:success")
+                    val profillingIntent = Intent(this, UserProfilingActivity::class.java)
+                    startActivity(profillingIntent)
+                    finish()
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w("LoginActivity", "signInWithCredential:failure", task.exception)
                 }
+            }
     }
 }
