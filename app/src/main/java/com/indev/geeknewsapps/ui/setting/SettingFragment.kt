@@ -34,10 +34,26 @@ class SettingFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser
 
-        Glide.with(this)
-                .load(currentUser?.photoUrl)
-                .into(iv_profile)
-        tv_fullName.text = currentUser?.displayName
+        if (currentUser != null) {
+            if (currentUser.photoUrl != null) {
+                Glide.with(this)
+                        .load(currentUser.photoUrl)
+                        .into(iv_profile)
+            } else {
+                Glide.with(this)
+                        .load("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png")
+                        .into(iv_profile)
+            }
+        }
+
+        if (currentUser != null) {
+            if (currentUser.displayName != null) {
+                tv_fullName.text = currentUser.displayName
+            } else {
+                tv_fullName.text = currentUser.uid
+            }
+        }
+
         tv_emailUser.text = currentUser?.email
 
 //        (activity as SettingActivity)
@@ -71,8 +87,8 @@ class SettingFragment : Fragment() {
             AlertDialog.Builder(it)
         }
 
-        builder?.setTitle("Warning!")
-        builder?.setMessage("Are you sure, want to logout?")
+        builder?.setTitle("Logout?")
+        builder?.setMessage("Are you sure?")
         builder?.setIcon(R.drawable.ic_warning)
 
         builder?.setPositiveButton("Yes") { dialog, _ ->

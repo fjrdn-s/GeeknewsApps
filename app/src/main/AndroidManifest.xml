@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GeeknewsApps">
-        <activity android:name=".login.reset.ResetPasswordActivity" />
         <activity android:name=".ui.category.event.CategoryEventActivity" />
         <activity android:name=".ui.category.game.CategoryGameActivity" />
         <activity android:name=".ui.category.movie.CategoryMovieActivity" />

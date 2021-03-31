@@ -18,14 +18,32 @@ class HelpSettingActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser
 
+        if (currentUser != null) {
+            if (currentUser.photoUrl != null) {
+                Glide.with(this)
+                        .load(currentUser.photoUrl)
+                        .into(iv_profile)
+            } else {
+                Glide.with(this)
+                        .load("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png")
+                        .into(iv_profile)
+            }
+        }
+
+        if (currentUser != null) {
+            if (currentUser.displayName != null) {
+                tv_fullName.text = currentUser.displayName
+            } else {
+                tv_fullName.text = currentUser.uid
+            }
+        }
+
+        tv_emailUser.text = currentUser?.email
+
         iv_back.setOnClickListener {
             onBackPressed()
         }
 
-        Glide.with(this)
-            .load(currentUser?.photoUrl)
-            .into(iv_profile)
-        tv_fullName.text = currentUser?.displayName
-        tv_emailUser.text = currentUser?.email
+
     }
 }

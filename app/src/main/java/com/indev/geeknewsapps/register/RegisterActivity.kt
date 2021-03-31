@@ -13,11 +13,6 @@ import kotlinx.android.synthetic.main.toolbar_layout.*
 
 class RegisterActivity : AppCompatActivity() {
 
-//    companion object {
-//        const val REQUEST_CAMERA = 100
-//    }
-//
-//    private lateinit var imageUri: Uri
     private lateinit var mAuth: FirebaseAuth
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -32,55 +27,10 @@ class RegisterActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-//        iv_profile.setOnClickListener {
-//            requestCamera()
-//        }
-
         btn_regist.setOnClickListener {
             requestRegist()
         }
     }
-
-//    private fun requestCamera() {
-//        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { intent ->
-//            this.packageManager?.let {
-//                intent.resolveActivity(it).also {
-//                    startActivityForResult(intent, REQUEST_CAMERA)
-//                }
-//            }
-//        }
-//    }
-//
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if (requestCode == REQUEST_CAMERA && resultCode == RESULT_OK) {
-//            val imgBitmap = data?.extras?.get("data") as Bitmap
-//            uploadImage(imgBitmap)
-//        }
-//    }
-//
-//    private fun uploadImage(imgBitmap: Bitmap) {
-//        val baos = ByteArrayOutputStream()
-//        val reference = FirebaseStorage.getInstance()
-//                .reference
-//            .child("img/")
-////                .child("img/${FirebaseAuth.getInstance().currentUser?.uid}")
-//
-//        imgBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-//        val image = baos.toByteArray()
-//
-//        reference.putBytes(image)
-//                .addOnCompleteListener { task ->
-//                    if (task.isSuccessful) {
-//                        reference.downloadUrl.addOnCompleteListener { Uri ->
-//                            Uri.result?.let {
-//                                imageUri = it
-//                                iv_profile.setImageBitmap(imgBitmap)
-//                            }
-//                        }
-//                    }
-//                }
-//    }
 
     private fun requestRegist() {
         val fullName = et_fullName.text.toString().trim()
