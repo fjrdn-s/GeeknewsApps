@@ -123,6 +123,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun signInUser(email: String, password: String) {
+        val progressBar = Dialog(this)
+        progressBar.setContentView(R.layout.dialog_progressbar)
+        progressBar.show()
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) {
                     if (it.isSuccessful) {
@@ -133,6 +137,9 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
 //                        Log.w("LoginActivity", "Google sign in failed")
                     }
+
+                    progressBar.setCancelable(false)
+                    progressBar.dismiss()
                 }
     }
 
@@ -165,6 +172,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
+        val progressBar = Dialog(this)
+        progressBar.setContentView(R.layout.dialog_progressbar)
+        progressBar.show()
+
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this) { task ->
@@ -178,6 +189,9 @@ class LoginActivity : AppCompatActivity() {
                         // If sign in fails, display a message to the user.
                         Log.w("LoginActivity", "signInWithCredential:failure", task.exception)
                     }
+
+                    progressBar.setCancelable(false)
+                    progressBar.dismiss()
                 }
     }
 }

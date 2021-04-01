@@ -18,6 +18,7 @@ class HelpSettingActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser
 
+//        Validation if user not have photo
         if (currentUser != null) {
             if (currentUser.photoUrl != null) {
                 Glide.with(this)
@@ -29,12 +30,12 @@ class HelpSettingActivity : AppCompatActivity() {
                         .into(iv_profile)
             }
         }
-
+//        Validation if user not have name
         if (currentUser != null) {
             if (currentUser.displayName != null) {
                 tv_fullName.text = currentUser.displayName
             } else {
-                tv_fullName.text = currentUser.uid
+                tv_fullName.text = currentUser.isAnonymous.toString()
             }
         }
 
@@ -42,8 +43,7 @@ class HelpSettingActivity : AppCompatActivity() {
 
         iv_back.setOnClickListener {
             onBackPressed()
+            return@setOnClickListener
         }
-
-
     }
 }

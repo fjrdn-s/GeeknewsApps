@@ -1,5 +1,6 @@
 package com.indev.geeknewsapps.ui.setting.profile
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -32,6 +33,7 @@ class ProfileSettingActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         val currentUser = mAuth.currentUser
 
+//        Validation if user not have photo
         if (currentUser != null) {
             if (currentUser.photoUrl != null) {
                 Glide.with(this)
@@ -46,6 +48,7 @@ class ProfileSettingActivity : AppCompatActivity() {
 
         iv_back.setOnClickListener {
             onBackPressed()
+            return@setOnClickListener
         }
 
         iv_addPhoto.setOnClickListener {
@@ -53,12 +56,14 @@ class ProfileSettingActivity : AppCompatActivity() {
         }
 
         btn_save.setOnClickListener {
+//            Validation Image
             val image = when {
                 ::imageUri.isInitialized -> imageUri
                 currentUser?.photoUrl == null -> Uri.parse("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1200px-No_image_available.svg.png")
                 else -> currentUser.photoUrl
             }
 
+//            Validation name, password
             val name = et_fullName.text.toString().trim()
 
             if (name.isEmpty()) {
@@ -66,6 +71,11 @@ class ProfileSettingActivity : AppCompatActivity() {
                 et_fullName.requestFocus()
                 return@setOnClickListener
             }
+
+//            Display progressBar
+            val progressBar = Dialog(this)
+            progressBar.setContentView(R.layout.dialog_progressbar)
+            progressBar.show()
 
             UserProfileChangeRequest.Builder()
                     .setDisplayName(name)
@@ -81,6 +91,9 @@ class ProfileSettingActivity : AppCompatActivity() {
                             } else {
                                 Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_LONG).show()
                             }
+
+                            progressBar.setCancelable(false)
+                            progressBar.dismiss()
                         }
                     }
         }

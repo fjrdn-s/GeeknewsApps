@@ -1,6 +1,7 @@
 package com.indev.geeknewsapps.register
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
@@ -33,15 +34,9 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun requestRegist() {
-        val fullName = et_fullName.text.toString().trim()
         val email = et_emailAddress.text.toString().trim()
         val password = et_password.text.toString().trim()
-
-        if (fullName.isEmpty()) {
-            et_fullName.error = "Please enter full name!"
-            et_fullName.requestFocus()
-            return
-        }
+        val confirmPassword = et_confirmPassword.text.toString().trim()
 
         if (email.isEmpty()) {
             et_emailAddress.error = "Please enter email address!"
@@ -61,10 +56,20 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
+        if (password != confirmPassword) {
+            et_confirmPassword.error = "Password not match"
+            et_confirmPassword.requestFocus()
+            return
+        }
+
         registerUser(email, password)
     }
 
     private fun registerUser(email: String, password: String) {
+        val progressBar = Dialog(this)
+        progressBar.setContentView(R.layout.dialog_progressbar)
+        progressBar.show()
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) {
                     if (it.isSuccessful) {
@@ -74,6 +79,9 @@ class RegisterActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                     }
+
+                    progressBar.setCancelable(false)
+                    progressBar.dismiss()
                 }
     }
 }

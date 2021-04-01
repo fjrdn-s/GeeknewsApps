@@ -50,7 +50,7 @@ class SettingFragment : Fragment() {
             if (currentUser.displayName != null) {
                 tv_fullName.text = currentUser.displayName
             } else {
-                tv_fullName.text = currentUser.uid
+                tv_fullName.text = currentUser.isAnonymous.toString()
             }
         }
 
