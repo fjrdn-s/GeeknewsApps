@@ -93,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
             resetPassword.dismiss()
         }
 
-        resetPassword.setCancelable(false)
+        resetPassword.setCancelable(true)
         resetPassword.show()
     }
 

@@ -63,6 +63,7 @@ class HomeHorizontalAdapter(
             mvDetail.putExtra(DetailActivity.EXTRA_POSTTIME, homeHorizontal.postTime)
             mvDetail.putExtra(DetailActivity.EXTRA_POSTBY, homeHorizontal.postBy)
             mvDetail.putExtra(DetailActivity.EXTRA_IMAGES, homeHorizontal.imagesUrl)
+            mvDetail.putExtra(DetailActivity.EXTRA_VIDEO, homeHorizontal.youtubeUrl)
 
             intentDetail.startActivity(mvDetail)
         }

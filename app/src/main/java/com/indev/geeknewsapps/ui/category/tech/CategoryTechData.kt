@@ -12,6 +12,14 @@ object CategoryTechData {
             "Lenovo Indonesia Luncurkan Produk Terbaru Lenovo™ Legion"
     )
 
+    private val hrYt = arrayOf(
+            "78dmlknKHhA",
+            "",
+            "",
+            "",
+            "PJ1ZM7-hBk0"
+    )
+
     private val hrDescription = arrayOf(
             "Geeknews.id – BenQ, penyedia perangkat digital lifestyle berskala internasional, mengumumkan Brightness Intelligence monitor GW2480T series yang dirancang untuk menyempurnakan gaya hidup minimalis modern, dengan teknologi perawatan mata terkemuka, dan desain yang mengutamakan kenyamanan pengguna. Dengan menggunakan B.I Tech Eye.\n" +
                     "\n" +
@@ -70,6 +78,7 @@ object CategoryTechData {
                 modelData.category = hrCategory[position]
                 modelData.postTime = hrPostTime[position]
                 modelData.postBy = hrPostBy[position]
+                modelData.youtubeUrl = hrYt[position]
                 list.add(modelData)
             }
             return list

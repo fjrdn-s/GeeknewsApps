@@ -8,5 +8,6 @@ class ModelData (
     var category: String= "",
     var postTime: String= "",
     var postBy: String= "",
-    var imagesUrl: String= ""
+    var imagesUrl: String= "",
+    var youtubeUrl: String= ""
 )

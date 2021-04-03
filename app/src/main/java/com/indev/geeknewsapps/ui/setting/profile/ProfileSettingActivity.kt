@@ -67,7 +67,7 @@ class ProfileSettingActivity : AppCompatActivity() {
             val name = et_fullName.text.toString().trim()
 
             if (name.isEmpty()) {
-                et_fullName.error = "Enter full name!"
+                et_fullName.error = "Please enter full name!"
                 et_fullName.requestFocus()
                 return@setOnClickListener
             }

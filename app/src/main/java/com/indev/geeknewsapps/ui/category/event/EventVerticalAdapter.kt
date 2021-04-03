@@ -62,6 +62,7 @@ class EventVerticalAdapter (
             mvDetail.putExtra(DetailActivity.EXTRA_POSTTIME, rcVertical.postTime)
             mvDetail.putExtra(DetailActivity.EXTRA_POSTBY, rcVertical.postBy)
             mvDetail.putExtra(DetailActivity.EXTRA_IMAGES, rcVertical.imagesUrl)
+            mvDetail.putExtra(DetailActivity.EXTRA_VIDEO, rcVertical.youtubeUrl)
 
             intentDetail.startActivity(mvDetail)
         }

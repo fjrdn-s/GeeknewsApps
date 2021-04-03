@@ -12,6 +12,14 @@ object CategoryEventData {
             "Sambut Tahun Baru Dengan Event Perayaan Liburan Di Blade&Soul Revolution"
     )
 
+    private val hrYt = arrayOf(
+            "",
+            "",
+            "j7zlThy8-FY",
+            "_9QeRfjfkEo",
+            ""
+    )
+
     private val hrDescription= arrayOf(
             "Geeknews.id – Menapaki bulan ketiga di tahun 2021 ini, Esportsnesia melalui esports venture menghadirkan suasana baru bagi industri esports di Indonesia. Kehadirannya menambah semangat berkompetisi diantara kawula muda yang ingin mengasah kemampuannya di bidang gaming competition yaitu melalui Mobile Legends Online Tournament yang akan diadakan pada tanggal 26-27 Maret 2021.",
 
@@ -68,6 +76,7 @@ object CategoryEventData {
                 modelData.category = hrCategory[position]
                 modelData.postTime = hrPostTime[position]
                 modelData.postBy = hrPostBy[position]
+                modelData.youtubeUrl = hrYt[position]
                 list.add(modelData)
             }
             return list

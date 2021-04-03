@@ -11,6 +11,15 @@ object HomeHorizontalData {
             "Laptop Gaming 15 inci dengan GeForce RTX™",
             "Ragnarok Origin Gravity Game Link"
     )
+
+    private val hrYt = arrayOf(
+            "",
+            "",
+            "2e4RGd8uvf8",
+            "",
+            "PPkCeOMLtU4"
+    )
+
     private val hrSubTitle= arrayOf(
             "Venture Hadirkan MLBB Online Tournament ...",
             "Kini Hadir Dalam Update Skala Besar A3: Still Alive ...",
@@ -40,7 +49,7 @@ object HomeHorizontalData {
     )
 
     private val hrCategory= arrayOf(
-            "GAME",
+            "EVENT",
             "EVENT",
             "MOVIE",
             "TECH",
@@ -75,6 +84,7 @@ object HomeHorizontalData {
                 modelData.category = hrCategory[position]
                 modelData.postTime = hrPostTime[position]
                 modelData.postBy = hrPostBy[position]
+                modelData.youtubeUrl = hrYt[position]
                 list.add(modelData)
             }
             return list

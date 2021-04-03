@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.indev.geeknewsapps.R
 import com.indev.geeknewsapps.ui._model.ModelData
@@ -42,7 +44,9 @@ class TrendingVerticalAdapter (
 
         Glide.with(holder.itemView.context)
                 .load(rcVertical.imagesUrl)
-                .apply(RequestOptions().override(70, 70))
+                .apply(RequestOptions()
+                        .override(70, 70)
+                        .transform(CenterCrop(), RoundedCorners(8)))
                 .into(holder.imgPoster)
         holder.tvTitle.text = rcVertical.title
         holder.tvCategory.text = rcVertical.category
@@ -58,6 +62,7 @@ class TrendingVerticalAdapter (
             mvDetail.putExtra(DetailActivity.EXTRA_POSTTIME, rcVertical.postTime)
             mvDetail.putExtra(DetailActivity.EXTRA_POSTBY, rcVertical.postBy)
             mvDetail.putExtra(DetailActivity.EXTRA_IMAGES, rcVertical.imagesUrl)
+            mvDetail.putExtra(DetailActivity.EXTRA_VIDEO, rcVertical.youtubeUrl)
 
             intentDetail.startActivity(mvDetail)
         }

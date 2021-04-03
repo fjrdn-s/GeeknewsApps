@@ -24,4 +24,5 @@
     <string name="gmail">Connect with gmail</string>
     <string name="login">Login</string>
     <string name="register">I’m a new user?, sign up</string>
+    <string name="new_password">New Password</string>
 </resources>

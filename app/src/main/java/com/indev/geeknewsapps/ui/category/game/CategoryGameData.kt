@@ -12,6 +12,14 @@ object CategoryGameData {
             "Game Fantasi Golf “Birdie Crush” Mencapai 1 Juta Pra-Registrasi"
     )
 
+    private val hrYt = arrayOf(
+            "",
+            "CZqX46AjHa0",
+            "WN2Bv5U-Eww",
+            "LznWwg4ta10",
+            "Fw1WFOIj0aQ"
+    )
+
     private val hrDescription = arrayOf(
             "Geeknews.id —  Di tahun 2021 yang sangat istimewa ini Gravity Game Link kembali menyelenggarakan event tahunannya yang diberi nama Gravity Day 2021 secara daring pada tanggal 12 Maret 2021 melalui Platform Zoom, Pada acara Gravity Day 2021, Gravity Game Link secara resmi mengumumkan informasi penting terkait dengan Project Plan & Business Plan khususnya pangsa pasar Indonesia di tahun 2021. Gravity Game Link berkomitmen untuk terus melakukan upaya terbaiknya dalam meningkatkan pertumbuhan industri game di Indonesia, upaya tersebut diwujudkan dengan menghadirkan beberapa game terbaru dari Gravity Game Link di tahun 2021.",
 
@@ -68,6 +76,7 @@ object CategoryGameData {
                 modelData.category = hrCategory[position]
                 modelData.postTime = hrPostTime[position]
                 modelData.postBy = hrPostBy[position]
+                modelData.youtubeUrl = hrYt[position]
                 list.add(modelData)
             }
             return list

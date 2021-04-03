@@ -12,6 +12,14 @@ object CategoryMovieData {
             "Bintang The Penthouse, Kim Young Dae akan Tampil di True Beauty"
     )
 
+    private val hrYt = arrayOf(
+            "11K013qpRR4",
+            "M_OauHnAFc8",
+            "Kopyc23VfSw",
+            "z5CfInEukJk",
+            "yhB4ZnFmc8o"
+    )
+
     private val hrDescription = arrayOf(
             "Geeknews.id – Film tentang mainan LEGO yang menjadi karakter hidup di 2014 lalu kini kembali lagi. Melalui The LEGO Movie 2: The Second Part, Phil Lord dan Chris Miller mencoba kembali membangun imajinasi penonton dari film yang sukses besar pada 5 tahun silam itu.\n" +
                     "\n" +
@@ -82,6 +90,7 @@ object CategoryMovieData {
                 modelData.category = hrCategory[position]
                 modelData.postTime = hrPostTime[position]
                 modelData.postBy = hrPostBy[position]
+                modelData.youtubeUrl = hrYt[position]
                 list.add(modelData)
             }
             return list

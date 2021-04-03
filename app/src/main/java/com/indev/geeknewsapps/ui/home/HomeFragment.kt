@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.indev.geeknewsapps.R
 import com.indev.geeknewsapps.ui._model.ModelData
 import com.indev.geeknewsapps.ui.home._objek.HomeHorizontalData
@@ -25,6 +26,10 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        iv_notification.setOnClickListener { view ->
+            Snackbar.make(view, "this feature is under maintenance", Snackbar.LENGTH_LONG).show()
+        }
 
         rc_listHorizontal.setHasFixedSize(true)
 
